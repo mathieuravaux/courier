@@ -1,14 +1,11 @@
 #!/usr/bin/env coffee
 
-VERSION = '0.1.0'
-
+# node
 fs            = require 'fs'
 path          = require 'path'
 {spawn, exec} = require 'child_process'
 
-
-log = console.log
-
+# npm
 CoffeeScript = require 'coffee-script'
 {OptionParser} = require 'coffee-script/lib/optparse'
 
@@ -37,26 +34,25 @@ args = options.arguments
 delete options.arguments
 
 if options.help or process.argv.length is 0
-  log parser.help()
+  console.log parser.help()
   process.exit 0
 
 if options.version
-  log VERSION
+  console.log fs.readFileSync 'VERSION', 'utf8'
   process.exit 0
 
-release = (options) ->
-  fs.readFile 'package.coffee', (error, data) ->
+deliver = (options) ->
+  fs.readFile 'package.coffee', 'utf8', (error, coffee) ->
     throw error if error
 
-    coffee = data.toString()
-    js = CoffeeScript.compile('return '+coffee)
+    js = CoffeeScript.compile "return #{coffee}"
     json = JSON.stringify eval(js), null, 2
 
     fs.writeFile 'package.json', json, ->
-      log json if options.print
+      console.log json if options.print
 
 if args.length <= 0
   args.push '.'
 
 if args.length > 0
-  release options
+  deliver options

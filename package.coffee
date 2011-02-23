@@ -1,10 +1,10 @@
 name: 'courier'
 
-description: 'npm packages in CoffeeScript - (package.coffee) -> (package.json)'
+description: 'package.coffee -> package.json (dynamic npm packages in CoffeeScript)'
 
 keywords: ['courier']
 
-version: '0.1.1'
+version: require('fs').readFileSync('VERSION', 'utf8')
 
 author: 'Feisty Studios <courier@feistystudios.com> (http://feistystudios.com/)'
 

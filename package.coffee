@@ -4,7 +4,7 @@ description: 'package.coffee -> package.json (dynamic npm packages in CoffeeScri
 
 keywords: ['courier']
 
-version: require('fs').readFileSync('VERSION', 'utf8')
+version: require('fs').readFileSync('./VERSION', 'utf8')
 
 author: 'Feisty Studios <courier@feistystudios.com> (http://feistystudios.com/)'
 
@@ -31,8 +31,8 @@ bin:
 main: 'courier'
   
 dependencies:
-  'coffee-script': '>= 1.0.0'
+  'coffee-script': '>= 1.0.1'
   
 engines:
-  node: '*'
-  npm: '>=0.3.0'
+  node: '>= 0.4.1'
+  npm: '>= 0.3.7'

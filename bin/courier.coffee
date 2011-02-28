@@ -1,6 +1,4 @@
 #!/usr/bin/env coffee
-
-# node
 fs            = require 'fs'
 path          = require 'path'
 {spawn, exec} = require 'child_process'
@@ -38,7 +36,7 @@ if options.help or process.argv.length is 0
   process.exit 0
 
 if options.version
-  console.log fs.readFileSync 'VERSION', 'utf8'
+  console.log fs.readFileSync './VERSION', 'utf8'
   process.exit 0
 
 deliver = (options) ->

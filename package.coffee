@@ -31,8 +31,8 @@ bin:
 main: 'courier'
   
 dependencies:
-  'coffee-script': '>= 1.0.1'
+  'coffee-script': '>= 1.0.1 < 1.1.'
   
-engines:
-  node: '>= 0.4.1'
-  npm: '>= 0.3.7'
+  engines:
+    node: '>= 0.4.2 < 0.5.0'
+    npm: '>= 0.3.15 < 0.4.0'

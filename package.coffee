@@ -33,6 +33,6 @@ main: 'courier'
 dependencies:
   'coffee-script': '>= 1.0.1 < 1.1.0'
   
-  engines:
-    node: '>= 0.4.2 < 0.5.0'
-    npm: '>= 0.3.15 < 0.4.0'
+engines:
+  node: '>= 0.4.2 < 0.5.0'
+  npm: '>= 0.3.15 < 0.4.0'
